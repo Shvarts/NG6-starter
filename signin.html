@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+<head>
+	<meta charset="utf-8">
+	<title>Amazon Sign In</title>
+	<link href="res/icon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/signin.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" ></script>
+	
+</head>
+<body>
+
+	<content>
+		<center><img src="res/title.png" class="titleImg"></center>
+		<div class="loginForm" ng-controller = "controller">
+			<div class="inner">
+				<form>
+					<h1>Sign in</h1>
+					<b>Email (phone for mobile accounts)</b>
+					<input ng-model="email" class="form-control" type="Email" name="email" class="a-input-text a-span12 auth-autofocus auth-required-field">
+					<div class="enterPass">
+					<b>Password </b><a href="#">Forgot your password?</a>
+					<input ng-model="password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/" class="form-control" type="Password" name="password"></br>
+					</div>
+					<div class="submit">
+					<button  class="a-button-input" ng-click="submit(email,password)" >Sing in</button>
+					</div>
+
+					<div class="checkbox">
+  						<div class="a-row a-spacing-top-medium">
+    <div class="a-section a-text-left">
+      <label for="auth-remember-me">
+        <div data-a-input-name="rememberMe" class="a-checkbox" style="margin-left: -20px"><label><input type="checkbox" name="rememberMe" value="true" tabindex="4" class="rememberMe" style="margin-left: -165px;"><i class="a-icon a-icon-checkbox"></i><span class="a-label a-checkbox-label">
+          Keep me signed in.
+          <span class="a-declarative" data-action="a-popover" data-a-popover="{&quot;activate&quot;:&quot;onclick&quot;,&quot;header&quot;:&quot;\&quot;Keep Me Signed In\&quot; Checkbox&quot;,&quot;inlineContent&quot;:&quot;<p>Choosing \&quot;Keep me signed in\&quot; reduces the number of times you're asked to sign in on this device.<\/p>\n<p>To keep your account secure, use this option only on your personal devices.<\/p>&quot;}">
+            <a id="remember_me_learn_more_link" href="javascript:void(0)" class="a-popover-trigger a-declarative">
+              Details
+            <i class="a-icon a-icon-popover"></i></a>
+          </span>
+        </span></label></div>
+      </label>
+    </div>
+  </div>
+					</div>
+					
+						<div class="a-divider a-divider-break">
+							<h5>New to Amazon?</h5>
+						</div>
+					<button class="newAcc">Create your Amazon account</button>
+				</form>
+			</div>
+		</div>
+	</content>
+	<footer>
+		<hr>
+		<div class="links">
+			<a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=508088"> Conditions of Use</a>
+			<a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=508088">  Privacy Notice </a>
+			<a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=508088"> Help </a>
+		</div>
+		<center><span>© 1996-2017, Amazon.com, Inc. or its affiliates</span></center>
+	</footer>
+	<script src = "app.js"></script>
+</body>
+</html>
