@@ -1,0 +1,75 @@
+<!-- HEADER navbar -->
+<header>
+	<div class="amazon-nav amazon-nav-color">
+		<!-- LEFT -->
+		<div class="amazon-nav-left">
+			<!-- LOGO -->
+			<div class="amazon-nav-logo">
+				<a href="#/" class="amazon-nav-logo-link">
+					<span class="amazon-nav-logo-img amazon-nav-sprite">Amazon</span><!-- img -->
+				</a>
+				<a href="#/" class="amazon-nav-logo-tagline amazon-nav-sprite">Try Prime</a><!-- prime try -->
+			</div>
+			<!-- /LOGO -->
+		</div>
+		<!-- /LEFT -->
+		<!-- RIGHT -->
+		<div class="amazon-nav-right">
+			<!-- BLOCK -->
+			<div class="amazon-nav-right-block">
+				<a href="#/" alt="Father's Day Gift Shop">
+					<div class="amazon-nav-right-img"></div><!-- img -->
+				</a>
+			</div>
+			<!-- /BLOCK -->
+		</div>
+		<!-- /RIGHT -->
+		<!-- FILL -->
+		<div class="amazon-nav-fill">
+			<!-- SEARCH BLOCK -->
+			<div class="amazon-nav-search">
+				<!-- SEARCH FORM -->
+				<form accept-charset="utf-8" action="/s/ref=nb_sb_noss" class="amazon-nav-searchbar" ng-class="{navfocus: focused, navfocus: focused2, navfocus: focused3}" ng-class="{}" method="GET" name="site-search" role="search">
+					<!-- LEFT -->
+					<div class="amazon-nav-left">
+						<div class="amazon-nav-search-scope amazon-nav-sprite" ng-class="{navfocus: focused, navfocus2: focused4, navfocus3: focused4}" >
+							<!-- select "ALL" visual -->
+							<div class="amazon-nav-search-facade" data-value="search-alias=aps">
+								<span class="amazon-nav-search-label">{{selectedCat.category}}</span>
+								<i class="amazon-nav-icon"></i>
+							</div>
+							<!-- /select "ALL" visual -->
+							<!-- select-->
+							<select ng-model="selectedCat" ng-options="sc.category for sc in categoryes" class="amazon-nav-search-dropdown" ng-focus="focused = true;focused4 = true" ng-blur="focused = false;focused4 = false" data-nav-digest="wezWuAIOCLmXcKFfjWysXb8f6ow" data-nav-selected="0" id="searchDropdownBox" name="url" style="display:block" title="Search in"></select>
+							<!-- /select-->
+						</div>
+					</div>
+					<!-- /LEFT -->
+					<!-- RIGHT -->
+					<div class="amazon-nav-right">
+						<!-- SUBMIT search -->
+						<div class="amazon-nav-search-submit amazon-nav-sprite" ng-class="{navfocus: focused2}">
+							<span id="amazon-nav-search-submit-text" class="amazon-nav-search-submit-text amazon-nav-sprite">Go</span>
+							<input type="submit" class="amazon-nav-input" ng-focus="focused2 = true" ng-blur="focused2 = false" value="Go"/>
+						</div>
+						<!-- /SUBMIT search -->
+					</div>
+					<!-- /RIGHT -->
+					<!-- FILL -->
+					<div class="amazon-nav-fill">
+						<!-- TXT -->
+						<div class="amazon-nav-search-field">
+							<input type="text" value="" name="field-keywords"  autocomplete="off" placeholder="" class="amazon-nav-input" ng-class="{navfocus: focused3, navfocus2: focused4, navfocus3: focused4}" ng-focus="focused3 = true;focused4 = true" ng-blur="focused3 = false;focused4 = false">
+						</div>
+						<!-- /TXT -->
+					</div>
+					<!-- /FILL -->
+				</form>
+				<!-- /SEARCH FORM -->
+			</div>
+			<!-- /SEARCH BLOCK -->
+		</div>
+		<!-- /FILL -->
+	</div>
+</header>
+<!-- /HEADER navbar-->

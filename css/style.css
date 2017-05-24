@@ -1,0 +1,391 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 13px;
+  line-height: 19px;
+  color: #111;
+  font-family: Arial,sans-serif;
+}
+/*---------------------------------
+
+NavBar
+
+-----------------------------------*/
+.amazon-nav {
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  height: 99px;
+  zoom: 1;
+  display: block;
+}
+
+.amazon-nav.amazon-nav-color {
+  background-color: #232f3e;
+}
+
+.amazon-nav-left {
+  position: relative;
+  float: left;
+  width: auto;
+  display: inline-block;
+}
+
+.amazon-nav-right {
+  position: relative;
+  float: right;
+  width: auto;
+  display: inline-block;
+}
+
+.amazon-nav-fill {
+  overflow: visible;
+}
+
+.amazon-nav .amazon-nav-fill, 
+.amazon-nav .amazon-nav-left, 
+.amazon-nav .amazon-nav-right {
+  height: 39px;
+}
+/*--------------------------------*/
+.amazon-nav.amazon-nav-color .amazon-nav-logo {
+  width: 192px;
+}
+
+.amazon-nav-logo {
+  position: relative;
+  float: left;
+  line-height: 0;
+  height: 100%;
+  padding: 13px 18px 0 27px;
+}
+
+a, a:active, a:link, a:visited {
+  text-decoration: none;
+  color: #0066c0;
+}
+
+.amazon-nav-logo .amazon-nav-logo-link {
+  clear: both;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.amazon-nav-logo .amazon-nav-logo-tagline {
+  position: absolute;
+  top: 32px;
+  left: 92px;
+  font-size: 11px;
+  line-height: 11px;
+  
+  white-space: nowrap;
+  color: #48A3C6;
+  background-repeat: no-repeat;
+  background-position: -1000px 0;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.amazon-nav-logo .amazon-nav-logo-img {
+  float: left;
+  text-indent: -500px;
+  background-position: -10px -51px;
+  width: 97px;
+  height: 29px;
+}
+
+.amazon-nav-sprite, .amazon-nav-icon {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/nav-sprite-global_bluebeacon-1x_optimized._CB281044790_.png);
+  background-position: 0 1000px;
+  background-repeat: repeat-x;
+}
+/*--------------------------------*/
+.amazon-nav-right-block {
+  position: relative;
+  height: 39px;
+  display: inline-block;
+  overflow: hidden;
+  top: 9px;
+}
+
+.amazon-nav-right-img{
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/img17/events/fathersday/1041196_events_fathersday_swms_400x39._CB509899702_.jpg); 
+  width: 400px;
+  height: 39px; 
+  overflow: hidden;
+  position: relative;
+}
+
+/*--------------------------------*/
+.amazon-nav-search .amazon-nav-searchbar .amazon-nav-fill, 
+.amazon-nav-search .amazon-nav-searchbar .amazon-nav-left, 
+.amazon-nav-search .amazon-nav-searchbar .amazon-nav-right {
+  position: relative;
+  height: 35px;
+}
+
+.amazon-nav .amazon-nav-search {
+  margin-top: 0;
+  padding-top: 11px;
+  padding-right: 25px;
+}
+
+.amazon-nav-search {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: auto;
+  margin: 10px 0 0;
+}
+/*--------------------------------*/
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-scope {
+  background-color: #f3f3f3;
+  background-image: none;
+  border-left: 1px solid #f3f3f3;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+}
+/*=================================*/
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-scope:hover,
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-scope.navfocus{
+  background-color: #dadada;
+  border-left-color: #dadada;
+  border-top-color: #dadada;
+  border-bottom-color: #dadada;
+}
+
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-scope.navfocus{
+  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, .1) inset;
+  -moz-box-shadow: 1px 2px 2px rgba(0, 0, 0, .1) inset;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, .1) inset;
+}
+
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-scope.navfocus2{
+  border: 1px solid #febd69;
+  border-right-color: #bdbdbd;
+}
+
+.amazon-nav-search .amazon-nav-searchbar.navfocus {
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 0 0 3px rgba(228,121,17,.5);
+  -moz-box-shadow: 0 0 3px rgba(228,121,17,.5);
+  box-shadow: 0 0 3px rgba(228,121,17,.5);
+}
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-field .amazon-nav-input.navfocus3{
+  outline: 1px solid #febd69;
+  outline-offset: 1px;
+}
+
+/*=================================*/
+
+.amazon-nav-search .amazon-nav-search-scope {
+  position: relative;
+  float: left;
+  z-index:5;
+  height: 35px;
+  margin: 0;
+  padding-left: 5px;
+  overflow: hidden;
+  border: 1px solid #cdcdcd;
+  border-top-color: #bdbdbd;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  background-position: 0 -532px;
+}
+
+.amazon-nav-search .amazon-nav-search-facade {
+  position: relative;
+  top: 1px;
+  float: left;
+  cursor: default;
+  overflow: hidden;
+}
+
+.amazon-nav-search .amazon-nav-search-facade .amazon-nav-search-label {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #777;
+  font-size: 12px;
+  line-height: 33px;
+  margin-right: 21px;
+  margin-left: 5px;
+}
+
+.amazon-nav-search .amazon-nav-search-dropdown {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: 0;
+  height: 35px;
+  width: auto;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+  border: 0;
+  line-height: 35px;
+}
+
+.amazon-nav-search .amazon-nav-search-facade .amazon-nav-icon {
+  position: absolute;
+  top: 14px;
+  right: 8px;
+  border-style: solid;
+  _border-style: dashed;
+  border-width: 4px;
+  border-color: transparent;
+  border-top: 4px solid #a0a0a0;
+  border-bottom-width: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+/*---------------------------------*/
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-submit.navfocus, 
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-submit:focus,
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-submit:hover {
+  background-color: #f3a847;
+}
+
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-submit {
+  background-color: #febd69;
+  background-image: none;
+  border: none;
+  width: 45px;
+}
+
+.amazon-nav-search .amazon-nav-search-submit {
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 35px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  background-position: 0 -381px;
+}
+
+.amazon-nav.amazon-nav-color .amazon-nav-search #amazon-nav-search-submit-text.amazon-nav-sprite {
+  background-position: -10px -290px;
+  width: 21px;
+  height: 21px;
+}
+
+.amazon-nav #amazon-nav-search-submit-text.amazon-nav-sprite {
+  background-position: -40px -290px;
+  width: 21px;
+  height: 21px;
+  text-indent: -500px;
+  top: 7px;
+}
+
+.amazon-nav #amazon-nav-search-submit-text {
+  left: 12px;
+  color: #111;
+  top: 11px;
+  text-shadow: none;
+}
+
+.amazon-nav-search .amazon-nav-search-submit .amazon-nav-search-submit-text {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  font-weight: 700;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+  font-family: arial,sans-serif;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+
+.amazon-nav-search .amazon-nav-search-submit .amazon-nav-input {
+  position: relative;
+  z-index: 5;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background: 0 0;
+  border: none;
+  text-indent: -1000px;
+  line-height: 1px;
+}
+/*---------------------------------*/
+.amazon-nav .amazon-nav-search .amazon-nav-searchbar .amazon-nav-fill {
+  overflow: hidden;
+}
+
+.amazon-nav.amazon-nav-color .amazon-nav-search .amazon-nav-search-field {
+  border: none;
+}
+
+.amazon-nav-search .amazon-nav-search-field {
+  position: relative;
+  height: 35px;
+  background: #fff;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.amazon-nav-search .amazon-nav-search-field .amazon-nav-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  line-height: 15px;
+  padding: 6px 10px 6px 0;
+  margin: 0;
+  margin-top: 2px;
+  border: 0;
+  height: 31px;
+  font-family: arial,sans-serif;
+  font-size: 15px;
+  background: 0 0;
+  color: #111;
+  outline: 0;
+  -webkit-appearance: none;
+  box-shadow: none;
+  text-indent: 8px;
+}
+
+/*---------------------------------
+
+//NavBar
+
+-----------------------------------*/
