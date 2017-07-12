@@ -1,0 +1,32 @@
+//----FONTS----//
+$font-arial: Arial;
+$font-sans:  sans-serif;
+//-------------//
+//----COLOR----//
+$nav-color:                        #232f3e;
+$nav-logo-tagline-color:           #48A3C6;
+$nav-search-color:                 #f3f3f3;
+$nav-search-border-color:          #cdcdcd;
+$nav-search-tborder-color:         #bdbdbd;
+$nav-search-hover-color:           #dadada;
+$nav-search-hover-rgba-color:      rgba(0, 0, 0, .1);
+$nav-search-hover-border-color:    #febd69;
+$nav-searchbar-focus-color:        rgba(228,121,17,.5);
+$nav-search-label-color:           #777;
+$nav-icon-border-color:            #a0a0a0;
+$nav-submit-color:                 #febd69;
+$nav-submit-focus-color:           #f3a847;
+$nav-submit-text-color:            #fff;
+$nav-submit-text-shadow-color:     rgba(0,0,0,.25);
+//-------------//
+
+//OLD//
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+$primaryColor:   #0277bd;
+$accentColor:    #1de9b6;
+$bgColor:        #efefef;
+$darkBgColor:    #263238;
+$lightBgColor:   #37474f;
+$lightTextColor: #f5f5f5;
+$darkTextColor:  #212121;
