@@ -1,187 +1,193 @@
 <!-- NAVBAR -->
 <div class="nav nav-color">
-	<!-- NAVBAR HEAD -->
-	<!-- LEFT -->
-	<div class="nav-left">
-		<!-- LOGO -->
-		<div class="nav-logo">
-			<a href="#" class="nav-logo-link">
-				<span class="nav-logo-img nav-sprite">Amazon</span>
-			</a>
-			<!-- Try Prime -->
-			<div class="nav-logo-tagline-position nav-holder">
-				<a href="#" class="nav-logo-tagline nav-sprite">Try Prime</a>
-				<div class="nav-block">
-					<div class="nav-arrow">
-						<div class="nav-arrow-inner"></div>
-					</div>
-					<div class="nav-flyout-content">
-						<div class="nav-flyout-content-title"> Get fast, free shipping with Amazon Prime </div>
-						<div class="nav-flyout-content-text">Prime members enjoy FREE Two-Day Shipping and exclusive access to music, movies, TV shows, original audio series, and Kindle books. </div>
-						<div class="nav-flyout-content-text"> >
-							<a href="#" class="nav-flyout-content-link">Get started</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Try Prime -->
-		</div>
-		<!-- /LOGO -->
-	</div>
-	<!-- /LEFT -->
-	<!-- RIGHT -->
-	<div class="nav-right">
-		<!-- BLOCK -->
-		<div class="nav-right-block">
-			<a href="#">
-				<div class="nav-right-img"></div><!-- img -->
-			</a>
-		</div>
-		<!-- /BLOCK -->
-	</div>
-	<!-- /RIGHT -->
-	<!-- FILL -->
-	<div class="nav-fill">
-		<!-- SEARCH BLOCK -->
-		<div class="nav-search">
-			<!-- SEARCH FORM -->
-			<form class="nav-searchbar" ng-class="{navfocus: focused, navfocus: focused2, navfocus: focused3}">
-				<!-- LEFT -->
-				<div class="nav-left">
-					<div class="nav-search-scope nav-sprite" ng-class="{navfocus: focused, navfocus2: focused4, navfocus3: focused4}">
-						<!-- select "ALL" visual -->
-						<div class="nav-search-facade">
-							<span class="nav-search-label">{{$ctrl.selectedCat.category}}</span>
-							<i class="nav-icon"></i>
-						</div>
-						<!-- /select "ALL" visual -->
-						<!-- select-->
-						<select ng-model="$ctrl.selectedCat"
-						ng-options="sc.category for sc in $ctrl.categories"
-						ng-focus="focused = true;focused4 = true"
-						ng-blur="focused = false;focused4 = false"
-						class="nav-search-dropdown" title="Search in"></select>
-						<!-- /select-->
-					</div>
-				</div>
-				<!-- /LEFT -->
-				<!-- RIGHT -->
-				<div class="nav-right">
-					<!-- SUBMIT search -->
-					<div class="nav-search-submit nav-sprite" ng-class="{navfocus: focused2}">
-						<span id="nav-search-submit-text" class="nav-search-submit-text nav-sprite">Go</span>
-						<input type="submit" class="nav-input" ng-click="$ctrl.setCategory($ctrl.selectedCat.category)" ng-focus="focused2 = true" ng-blur="focused2 = false" value="GO"/>
-					</div>
-					<!-- /SUBMIT search -->
-				</div>
-				<!-- /RIGHT -->
-				<!-- FILL -->
-				<div class="nav-fill">
-					<!-- TXT -->
-					<div class="nav-search-field">
-						<input type="text" class="nav-input" autocomplete="off" placeholder=""
-						ng-class="{navfocus: focused3, navfocus2: focused4, navfocus3: focused4}"
-						ng-focus="focused3 = true;focused4 = true"
-						ng-blur ="focused3 = false;focused4 = false"
-						ng-model="$ctrl.searchText">
-					</div>
-					<!-- /TXT -->
-				</div>
-				<!-- /FILL -->
-			</form>
-			<!-- /SEARCH FORM -->
-		</div>
-		<!-- /SEARCH BLOCK -->
-		<!-- TABLE WITH ITEMS -->
-		<div class="container">
-			<br><br><br><br><br><br>
-			<table class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Category</th>
-						<th>Price</th>
-						<th>Owner</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="item in $ctrl.items | filter: $ctrl.finalSearch">
-						<td>{{item.name}}</td>
-						<td>{{$ctrl.selectedCat.category}}</td>
-						<td>{{item.price | currency}}</td>
-						<td>{{item.owner}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<!-- /TABLE WITH ITEMS -->
-	</div>
-	<!-- /FILL -->
-	<!-- /NAVBAR HEAD -->
-	<!-- NAVBAR MAIN -->
-	<div class="nav-main nav-color">
-		<div class="nav-left">
-			<div class="nav-shop">
-				<div class="nav-holder">
-					<a href="#" class="nav-submenu">
+  <!-- NAVBAR HEAD -->
+  <!-- LEFT -->
+  <div class="nav-left">
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <a href="#" class="nav-logo-link">
+        <span class="nav-logo-img nav-sprite">Amazon</span>
+      </a>
+      <!-- Try Prime -->
+      <div class="nav-logo-tagline-position">
+        <div class="nav-holder">
+          <a href="#" class="nav-logo-tagline nav-sprite">Try Prime</a>
+          <div class="nav-block">
+            <div class="nav-arrow">
+              <div class="nav-arrow-inner"></div>
+            </div>
+            <div class="nav-flyout-content">
+              <div class="nav-flyout-content-title"> Get fast, free shipping with Amazon Prime</div>
+              <div class="nav-flyout-content-text">Prime members enjoy FREE Two-Day Shipping and exclusive access to
+                music, movies, TV shows, original audio series, and Kindle books.
+              </div>
+              <div class="nav-flyout-content-text"> >
+                <a href="#" class="nav-flyout-content-link">Get started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Try Prime -->
+    </div>
+    <!-- /LOGO -->
+  </div>
+  <!-- /LEFT -->
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <!-- BLOCK -->
+    <div class="nav-right-block">
+      <a href="#">
+        <div class="nav-right-img"></div><!-- img -->
+      </a>
+    </div>
+    <!-- /BLOCK -->
+  </div>
+  <!-- /RIGHT -->
+  <!-- FILL -->
+  <div class="nav-fill">
+    <!-- SEARCH BLOCK -->
+    <div class="nav-search">
+      <!-- SEARCH FORM -->
+      <form class="nav-searchbar" ng-class="{navfocus: focused, navfocus: focused2, navfocus: focused3}">
+        <!-- LEFT -->
+        <div class="nav-left">
+          <div class="nav-search-scope nav-sprite"
+               ng-class="{navfocus: focused, navfocus2: focused4, navfocus3: focused4}">
+            <!-- select "ALL" visual -->
+            <div class="nav-search-facade">
+              <span class="nav-search-label">{{$ctrl.selectedCat.category}}</span>
+              <i class="nav-icon"></i>
+            </div>
+            <!-- /select "ALL" visual -->
+            <!-- select-->
+            <select ng-model="$ctrl.selectedCat"
+                    ng-options="sc.category for sc in $ctrl.categories"
+                    ng-focus="focused = true;focused4 = true"
+                    ng-blur="focused = false;focused4 = false"
+                    class="nav-search-dropdown" title="Search in"></select>
+            <!-- /select-->
+          </div>
+        </div>
+        <!-- /LEFT -->
+        <!-- RIGHT -->
+        <div class="nav-right">
+          <!-- SUBMIT search -->
+          <div class="nav-search-submit nav-sprite" ng-class="{navfocus: focused2}">
+            <span class="nav-search-submit-text nav-sprite">Go</span>
+            <input type="submit" class="nav-input" ng-click="$ctrl.setCategory($ctrl.selectedCat.category)"
+                   ng-focus="focused2 = true" ng-blur="focused2 = false" value="GO"/>
+          </div>
+          <!-- /SUBMIT search -->
+        </div>
+        <!-- /RIGHT -->
+        <!-- FILL -->
+        <div class="nav-fill">
+          <!-- TXT -->
+          <div class="nav-search-field">
+            <input type="text" class="nav-input" autocomplete="off" placeholder=""
+                   ng-class="{navfocus: focused3, navfocus2: focused4, navfocus3: focused4}"
+                   ng-focus="focused3 = true;focused4 = true"
+                   ng-blur="focused3 = false;focused4 = false"
+                   ng-model="$ctrl.searchText">
+          </div>
+          <!-- /TXT -->
+        </div>
+        <!-- /FILL -->
+      </form>
+      <!-- /SEARCH FORM -->
+    </div>
+    <!-- /SEARCH BLOCK -->
+    <!-- TABLE WITH ITEMS -->
+    <div class="container">
+      <br><br><br><br><br><br>
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Owner</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in $ctrl.items | filter: $ctrl.finalSearch">
+          <td>{{item.name}}</td>
+          <td>{{$ctrl.selectedCat.category}}</td>
+          <td>{{item.price | currency}}</td>
+          <td>{{item.owner}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /TABLE WITH ITEMS -->
+  </div>
+  <!-- /FILL -->
+  <!-- /NAVBAR HEAD -->
+  <!-- NAVBAR MAIN -->
+  <div class="nav-main">
+    <div class="nav-left">
+      <div class="nav-shop">
+        <div class="nav-holder">
+          <a href="#" class="nav-submenu">
 						<span class="nav-submenu-text">Departments
 							<span class="nav-submenu-arrow"></span>
 						</span>
-					</a>
-					<div class="nav-block2">
-						<div class="nav-arrow">
-							<div class="nav-arrow-inner"></div>
-						</div>
-						<div class="nav-flyout-content">
-							<div ng-repeat="submenu in $ctrl.submenuList" ng-mouseover="$ctrl.blockView=true" ng-mouseleave="$ctrl.blockView=false">
-								<span class="nav-r-arrow nav-item"> 
+          </a>
+          <div class="nav-block2">
+            <div class="nav-arrow">
+              <div class="nav-arrow-inner"></div>
+            </div>
+            <div class="nav-flyout-content">
+              <div ng-repeat="submenu in $ctrl.submenuList" ng-mouseover="$ctrl.blockView=true"
+                   ng-mouseleave="$ctrl.blockView=false">
+								<span class="nav-r-arrow nav-item">
 									<span class="nav-text">{{submenu}}</span>
 								</span>
-								<div class="nav-item-divider" ng-show="$index==6 || $index==18"></div>
-							</div>
-							<span class="nav-item"> 
+                <div class="nav-item-divider" ng-show="$index==6 || $index==18"></div>
+              </div>
+              <span class="nav-item">
 								<span class="nav-text nav-link">Full Store Directory</span>
 							</span>
-						</div>
-					</div>
-					<div class="nav-block3" ng-class="{navitem: $ctrl.blockView}" ng-mouseover="$ctrl.blockView=true" ng-mouseleave="$ctrl.blockView=false">
-						<div class="nav-submenu1" ng-class="{navsubmenu1: $ctrl.blockView}">
-							<img class="nav-promo" ng-class="{navpromo: $ctrl.blockView}" src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/merch/2017_PrimeDay/Leadup/AVD_5384_PrimeDay_TVOD_LEADUP_flyout_us._CB505604078_.png">
-							<div class="nav-column-first">
-								<span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">Amazon Video</span>
-								<div class="nav-panel">
+            </div>
+          </div>
+          <div class="nav-block3" ng-class="{navitem: $ctrl.blockView}" ng-mouseover="$ctrl.blockView=true" ng-mouseleave="$ctrl.blockView=false">
+            <div class="nav-submenu1" ng-class="{navsubmenu1: $ctrl.blockView}">
+              <img class="nav-promo" ng-class="{navpromo: $ctrl.blockView}" src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/merch/2017_PrimeDay/Leadup/AVD_5384_PrimeDay_TVOD_LEADUP_flyout_us._CB505604078_.png">
+              <div class="nav-column-first">
+                <span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">Amazon Video</span>
+                <div class="nav-panel">
 
-									<span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">All Videos</span>
-									<span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">All TV shows, movies, and more</span>
-									<span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Included with Prime</span>
-									<span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Originals, exclusives, and more</span>
-									<span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Amazon Channels</span>
-									<span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">HBO, SHOWTIME, STARZ, and more</span>
-									<span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Rent or Buy</span>
-									<span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">New releases, latest seasons, and more</span>
-									<div class="nav-item-divider nav-divider-for-panel" ng-class="{navhide: !$ctrl.blockView}"></div>
-									<span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Watchlist</span>
-									<span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Video Library</span>
-									<span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Watch Anywhere</span>
-									<span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Getting Started</span>
+                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">All Videos</span>
+                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">All TV shows, movies, and more</span>
+                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Included with Prime</span>
+                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Originals, exclusives, and more</span>
+                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Amazon Channels</span>
+                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">HBO, SHOWTIME, STARZ, and more</span>
+                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Rent or Buy</span>
+                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">New releases, latest seasons, and more</span>
+                  <div class="nav-item-divider nav-divider-for-panel" ng-class="{navhide: !$ctrl.blockView}"></div>
+                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Watchlist</span>
+                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Video Library</span>
+                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Watch Anywhere</span>
+                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Getting Started</span>
 
-								</div>
-							</div>
-							<div class="nav-column-second">
-								<span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">More to Explore</span>
-								<div class="nav-panel">
+                </div>
+              </div>
+              <div class="nav-column-second">
+                <span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">More to Explore</span>
+                <div class="nav-panel">
 
-									<span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Originals</span>
-									<span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Original Series and Movies</span>
+                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Originals</span>
+                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Original Series and Movies</span>
 
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /NAVBAR MAIN -->
-	</div>
-	<!-- /NAVBAR -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /NAVBAR MAIN -->
+  </div>
+  <!-- /NAVBAR -->
