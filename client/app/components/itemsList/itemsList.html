@@ -1,0 +1,116 @@
+<app-header></app-header>
+<ul>
+  <li id="result_1" class="s-result-item celwidget" ng-repeat="element in $ctrl.items">
+    <div class="s-item-container">
+      <div class="a-fixed-left-grid">
+        <div class="a-fixed-left-grid-inner" style="padding-left:218px">
+          <div class="a-fixed-left-grid-col a-col-left" style="width:218px;margin-left:-218px;_margin-left:-109px;float:left;">
+            <div class="a-row a-spacing-base">
+              <div class="a-column a-span12 a-text-center">
+                <a class="a-link-normal a-text-normal" ng-href="{{ element.url }}"><img ng-src="{{ element.imageUrl }}" width="218" height="218" alt="Product Details" class="s-access-image cfMarker" data-search-image-load=""></a>
+              </div>
+            </div>
+          </div>
+          <div class="a-fixed-left-grid-col a-col-right" style="padding-left:2%;*width:97.6%;float:left;">
+            <div class="a-row a-spacing-small">
+              <div class="a-row a-spacing-none">
+                <a class="a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal" title="{{ element.name }}" href="{{ element.url }}">
+                  <h2 data-attribute="{{ element.name }}" data-max-rows="0" class="a-size-medium s-inline  s-access-title  a-text-normal">{{ element.name }}</h2>
+                </a>
+                <span class="a-letter-space" ng-if="element.platform !== ''"></span>
+                <span class="a-letter-space" ng-if="element.platform !== ''"></span>
+                <span class="a-size-small a-color-secondary a-text-bold"  ng-if="element.platform !== ''">{{ element.platform }}</span>
+                <span class="a-letter-space" ng-if="element.esrb !== ''"></span>
+                <div class="a-box a-box-thumbnail" ng-if="element.esrb !== ''">
+                  <div class="a-box-inner">
+                    <span class="a-letter-space"></span>
+                    <span class="a-size-small a-color-secondary">ESRB Rating: {{ element.esrb }}</span>
+                    <span class="a-letter-space"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="a-row a-spacing-none">
+                <span class="a-size-small a-color-secondary">by </span>
+                <span class="a-size-small a-color-secondary">{{ element.studio }}</span>
+              </div>
+            </div>
+            <div class="a-row">
+              <div class="a-column a-span7">
+                <table class="a-keyvalue s-table-twister-header s-table-twister-table" ng-if="element.platforms.length > 0">
+                  <tbody>
+                  <tr class="a-spacing-none s-table-twister-row">
+                    <th class="a-span7 a-size-small"><span>Platforms</span></th>
+                    <th class="a-span4 a-size-small"><span>Price</span></th>
+                    <th class="a-span1 a-size-small a-text-center" style="width:1px;"><span>New/Used</span></th>
+                  </tr>
+
+                  <tr class="a-spacing-none s-table-twister-row-no-border s-table-twister-row" ng-repeat="platform in element.platforms">
+                    <td>
+                      <div class="a-row a-spacing-none"><a class="a-link-normal a-text-normal" title="{{ platform.name }}" href="#"><h3 data-max-rows="0" data-truncate-by-character="false" class="a-size-small s-inline  a-text-normal">{{ platform.name }}</h3></a></div>
+                    </td>
+                    <td class="a-align-center">
+                      <div class="a-row a-spacing-none" ng-if="platform.price > 0">
+                        <a class="a-link-normal a-text-normal" href="#">
+                            <span aria-label="${{ element.price }}" class="a-color-base sx-zero-spacing">
+                              <span class="sx-price sx-price-large">
+                                <sup class="sx-price-currency">$</sup>
+                                <span class="sx-price-whole">{{ platform.priceWhole }}</span>
+                                <sup class="sx-price-fractional">{{ platform.priceFractional }}</sup>
+                              </span>
+                            </span>
+                        </a>
+                        <span class="a-letter-space" ng-if="platform.reatilPrice > 0"></span>
+                        <span class="a-size-base-plus a-color-secondary a-text-strike" ng-if="platform.reatilPrice > 0">${{ platform.reatilPrice }}</span>
+                        <span class="a-letter-space" ng-if="platform.prime"></span>
+                        <i class="a-icon a-icon-prime a-icon-small s-align-text-bottom" aria-label="Prime" ng-if="platform.prime"><span class="a-icon-alt">Prime</span></i>
+                      </div>
+                      <div class="a-row a-spacing-none" ng-if="platform.price == 0"><span class="a-color-secondary">-</span></div>
+                    </td>
+                    <td class="a-text-center a-align-center">
+                      <span class="a-color-secondary">{{ (platform.newUsedPrice > 0 ? '$' + platform.newUsedPrice  : '-') }}</span>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div class="a-row a-spacing-none" ng-if="element.platforms.length == 0">
+                  <a class="a-link-normal a-text-normal" href="#">
+                  <span aria-label="$59.96" class="a-color-base sx-zero-spacing">
+                    <span class="sx-price sx-price-large">
+                      <sup class="sx-price-currency">$</sup>
+                      <span class="sx-price-whole">{{ element.priceWhole }}</span>
+                      <sup class="sx-price-fractional">{{ element.priceFractional }}</sup>
+                    </span>
+                  </span>
+                  </a>
+                  <span class="a-letter-space" ng-if="element.prime"></span>
+                  <i class="a-icon a-icon-prime a-icon-small s-align-text-bottom" aria-label="Prime" ng-if="element.prime"><span class="a-icon-alt">Prime</span></i>
+                  <div class="a-row a-spacing-mini">
+                    <div class="a-row a-spacing-none">
+                      <span class="a-size-small a-color-secondary">FREE Shipping on eligible orders</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="a-column a-span5 a-span-last">
+                <div class="a-row a-spacing-mini" ng-if="element.description !== ''">
+                  <span class="a-size-small a-color-secondary a-text-bold">Product Description</span>
+                  <br>
+                  <span class="a-size-small a-color-secondary">{{ element.description }}</span>
+                </div>
+                <div class="a-row a-spacing-mini">
+                  <div class="a-row a-spacing-none">
+                    <div class="a-popover-preload" id="a-popover-B072NQJCW5">
+                      <ul class="a-unordered-list a-vertical">
+                        <li><span class="a-list-item">Pre-order Price Guarantee.</span></li>
+                      </ul><a class="a-size-small a-link-normal a-text-normal" href="https://www.amazon.com/Call-Duty-WWII-Xbox-One-Standard/dp/B072NQJCW5/ref=sr_1_2_det?s=videogames&amp;ie=UTF8&amp;qid=1499718555&amp;sr=1-2#productPromotions">See Details</a></div><span class="a-size-small a-color-secondary"><span class="a-color-secondary">Pre-order Bonus</span> and <span class="a-declarative" data-action="a-popover" data-a-popover="{&quot;name&quot;:&quot;B072NQJCW5&quot;,&quot;position&quot;:&quot;triggerBottom&quot;}"><a href="javascript:void(0)" class="a-popover-trigger a-declarative a-text-normal">1 more promotion<i class="a-icon a-icon-popover"></i></a></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<app-footer></app-footer>
