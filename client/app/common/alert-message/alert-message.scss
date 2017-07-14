@@ -1,0 +1,28 @@
+$red: rgba(255, 0, 0, 1);
+
+.a-icon {
+  //background-image: $url_0;
+  //background-image: url(./img/amazon_sprites.png);
+  background-size: 400px 650px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.a-alert-content {
+  position: relative;
+  margin-top: 5px;
+  span {
+    margin-left: 20px;
+    color: $red;
+  }
+}
+
+.a-icon-alert {
+  height: 13px;
+  width: 14px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-position: -135px -130px;
+}

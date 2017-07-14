@@ -6,6 +6,7 @@
   padding: 1rem;
 
   .nav-links,
+  .nav-crud,
   .logo {
     display: inline-block;
   }
@@ -15,7 +16,7 @@
     margin-right: 50%;
   }
 
-  .nav-links span {
+  .nav-links span, .nav-crud span {
     color: $lightTextColor;
     font-size: 1.6rem;
   }

@@ -1,0 +1,100 @@
+<navbar></navbar>
+<h1>{{ name }}</h1>
+<section>
+  <div>
+    <div class="create-sect">
+      <div class="logo-top">
+        <a href="#" tabindex="-1" class="link-nav-icon">
+          <i class="a-icon a-icon-logo" aria-label="Amazon">
+            <span class="a-icon-alt">Amazon</span>
+          </i>
+        </a>
+      </div>
+      <div class="add-item">
+        <div class="add-item-padding">
+          <form name="crFrm"
+                ng-submit="!isEditing ? crud.addItem(crFrm.$valid) : crud.updateItem(crFrm.$valid, newItem)" novalidate>
+            <h1 class="a-spacing-small" ng-show="!isEditing">Add a new product</h1>
+            <h1 class="a-spacing-small" ng-show="isEditing">Update product</h1>
+
+            <!-- PRODUCT NAME -->
+            <div class="input-row">
+              <label for="item-name">Product name</label>
+              <input type="text" name="itemName" ng-model="newItem.name" id="item-name" class="input-text"
+                     ng-class="{ 'has-error' : crFrm.itemName.$invalid && !crFrm.itemName.$pristine }" required>
+              <alert-message ng-show="crFrm.itemName.$invalid && !crFrm.itemName.$pristine" name="$ctrl.name">Enter
+                product name {{$ctrl.name}}
+              </alert-message>
+            </div>
+
+            <!-- PRODUCT CATEGORY -->
+            <div class="input-row">
+              <label for="item-category">Product category</label>
+              <input type="text" name="itemCategory" ng-model="newItem.category" id="item-category" class="input-text"
+                     ng-class="{ 'has-error' : crFrm.itemCategory.$invalid && !crFrm.itemCategory.$pristine }" required>
+              <alert-message ng-show="crFrm.itemCategory.$invalid && !crFrm.itemCategory.$pristine">Enter category
+              </alert-message>
+            </div>
+
+            <!-- PRODUCT PRICE -->
+            <div class="input-row">
+              <label for="item-price">Product price</label>
+              <input type="number" min="0" name="itemPrice" ng-model="newItem.price" id="item-price" class="input-text"
+                     ng-class="{ 'has-error' : crFrm.itemPrice.$invalid && !crFrm.itemPrice.$pristine }" required>
+              <alert-message ng-show="crFrm.itemPrice.$invalid && !crFrm.itemPrice.$pristine">Enter product price
+              </alert-message>
+            </div>
+
+            <!-- PRODUCT OWNER -->
+            <div class="input-row">
+              <label for="item-owner">Product owner (company)</label>
+              <input type="text" name="itemOwner" ng-model="newItem.owner" id="item-owner" class="input-text"
+                     ng-class="{ 'has-error' : crFrm.itemOwner.$invalid && !crFrm.itemOwner.$pristine }" required>
+              <alert-message ng-show="crFrm.itemOwner.$invalid && !crFrm.itemOwner.$pristine">Enter product owner
+              </alert-message>
+            </div>
+            <div class="a-divider a-divider-break" ng-show="!isEditing">
+              <h5>Create new product</h5>
+            </div>
+            <div class="a-divider a-divider-break" ng-show="isEditing">
+              <h5>Confirm your changes</h5>
+            </div>
+            <button type="submit" class="a-button-input" value="Add"
+                    ng-show="!isEditing" ng-disabled="crFrm.$invalid" ng-class="{ 'form-invalid' : crFrm.$invalid }">Add
+              Product
+            </button>
+            <button type="submit" class="a-button-input" value="Add"
+                    ng-show="isEditing" ng-disabled="crFrm.$invalid" ng-class="{ 'form-invalid' : crFrm.$invalid }">
+              Update Item
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <table style="width: 80%; margin: 0 auto;" border="1">
+      <thead>
+      <tr style="text-align: left; background-color: lightblue; border-bottom: 1px dashed deepskyblue;">
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Owner</th>
+        <th>Settings</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in items" class="item-style">
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price | currency}}</td>
+        <td>{{item.owner}}</td>
+        <td>
+          <button ng-click="crud.deleteItem(item)">Del</button>
+          <button ng-click="crud.editItem(item)" ng-disabled="isEditing === true"
+                  ng-class="{ 'disabled-edit' : isEditing === true }">Edit
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
