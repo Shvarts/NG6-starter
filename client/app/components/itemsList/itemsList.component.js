@@ -9,3 +9,4 @@ let itemsListComponent = {
 };
 
 export default itemsListComponent;
+//
