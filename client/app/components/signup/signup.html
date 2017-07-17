@@ -48,7 +48,7 @@
               <div class="auth-require-fields-match-group">
                 <div class="a-row a-spacing-base">
                   <label for="ap_password" class="a-form-label">Password</label>
-                  <input ng-model="$ctrl.password" ng-keyup="$ctrl.checkPassword()" ng-class="{ 'a-form-error': $ctrl.frmSignup.password.$dirty && $ctrl.frmSignup.password.$invalid }" required minlength="6" type="password" maxlength="1024" id="ap_password" autocomplete="off" placeholder="At least 6 characters" name="password" tabindex="5" class="a-input-text a-form-normal a-span12 auth-required-field auth-require-fields-match  auth-require-password-validation">
+                  <input ng-model="$ctrl.password" ng-keyup="$ctrl.checkPassword()" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/" ng-class="{ 'a-form-error': $ctrl.frmSignup.password.$dirty && $ctrl.frmSignup.password.$invalid }" required minlength="6" type="password" maxlength="1024" id="ap_password" autocomplete="off" placeholder="At least 6 characters" name="password" tabindex="5" class="a-input-text a-form-normal a-span12 auth-required-field auth-require-fields-match  auth-require-password-validation">
                   <div ng-show="$ctrl.frmSignup.password.$dirty && $ctrl.frmSignup.password.$error.required" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
                     <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
                       <div class="a-alert-content">Enter your password</div>
@@ -57,6 +57,11 @@
                   <div ng-show="$ctrl.frmSignup.password.$dirty && $ctrl.frmSignup.password.$error.minlength" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
                     <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
                       <div class="a-alert-content">Passwords must be at least 6 characters.</div>
+                    </div>
+                  </div>
+                  <div ng-show="$ctrl.frmSignup.password.$dirty && $ctrl.frmSignup.password.$error.pattern" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
+                    <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
+                      <div class="a-alert-content">The password must cotain letters and at least 1 digit.</div>
                     </div>
                   </div>
                 </div>
