@@ -17,8 +17,8 @@
               <div class="nav-arrow-inner"></div>
             </div>
             <div class="nav-flyout-content">
-              <div class="nav-flyout-content-title"> Get fast, free shipping with Amazon Prime</div>
-              <div class="nav-flyout-content-text">Prime members enjoy FREE Two-Day Shipping and exclusive access to
+              <div class="nav-flyout-content-title"> Getfast, freeshipping with Amazon Prime</div>
+              <div class="nav-flyout-content-text">Prime members enjoy FREE Two - Day Shipping and exclusive access to
                 music, movies, TV shows, original audio series, and Kindle books.
               </div>
               <div class="nav-flyout-content-text"> >
@@ -56,13 +56,13 @@
                ng-class="{navfocus: focused, navfocus2: focused4, navfocus3: focused4}">
             <!-- select "ALL" visual -->
             <div class="nav-search-facade">
-              <span class="nav-search-label">{{$ctrl.selectedCat.category}}</span>
+              <span class="nav-search-label">{{$ctrl.selectedCategory}}</span>
               <i class="nav-icon"></i>
             </div>
             <!-- /select "ALL" visual -->
             <!-- select-->
-            <select ng-model="$ctrl.selectedCat"
-                    ng-options="sc.category for sc in $ctrl.categories"
+            <select ng-model="$ctrl.selectedCategory"
+                    ng-options="category for category in $ctrl.getCategories"
                     ng-focus="focused = true;focused4 = true"
                     ng-blur="focused = false;focused4 = false"
                     class="nav-search-dropdown" title="Search in"></select>
@@ -75,7 +75,7 @@
           <!-- SUBMIT search -->
           <div class="nav-search-submit nav-sprite" ng-class="{navfocus: focused2}">
             <span class="nav-search-submit-text nav-sprite">Go</span>
-            <input type="submit" class="nav-input" ng-click="$ctrl.setCategory($ctrl.selectedCat.category)"
+            <input type="submit" class="nav-input" ng-click="$ctrl.search($ctrl.selectedCategory)"
                    ng-focus="focused2 = true" ng-blur="focused2 = false" value="GO"/>
           </div>
           <!-- /SUBMIT search -->
@@ -89,7 +89,7 @@
                    ng-class="{navfocus: focused3, navfocus2: focused4, navfocus3: focused4}"
                    ng-focus="focused3 = true;focused4 = true"
                    ng-blur="focused3 = false;focused4 = false"
-                   ng-model="$ctrl.searchText">
+                   ng-model="$ctrl.getText">
           </div>
           <!-- /TXT -->
         </div>
@@ -104,16 +104,16 @@
       <table class="table table-bordered table-striped">
         <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
-          <th>Category</th>
           <th>Price</th>
           <th>Owner</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in $ctrl.items | filter: $ctrl.finalSearch">
+        <tr ng-repeat="item in $ctrl.searchedItems_2 | filter: $ctrl.txtSearch">
+          <td>{{item.id}}</td>
           <td>{{item.name}}</td>
-          <td>{{$ctrl.selectedCat.category}}</td>
           <td>{{item.price | currency}}</td>
           <td>{{item.owner}}</td>
         </tr>
@@ -130,64 +130,82 @@
       <div class="nav-shop">
         <div class="nav-holder">
           <a href="#" class="nav-submenu">
-						<span class="nav-submenu-text">Departments
-							<span class="nav-submenu-arrow"></span>
-						</span>
+            <span class="nav-submenu-text">Departments<span class="nav-submenu-arrow"></span></span>
           </a>
+          <!-- ===================================================================================================== -->
           <div class="nav-block2">
             <div class="nav-arrow">
               <div class="nav-arrow-inner"></div>
             </div>
             <div class="nav-flyout-content">
-              <div ng-repeat="submenu in $ctrl.submenuList" ng-mouseover="$ctrl.blockView=true"
-                   ng-mouseleave="$ctrl.blockView=false">
-								<span class="nav-r-arrow nav-item">
-									<span class="nav-text">{{submenu}}</span>
+              <div ng-repeat="submenu in $ctrl.getSubmenus"
+                   ng-mouseover="$ctrl.blockView[$index]=true"
+                   ng-mouseleave="$ctrl.blockView[$index]=false">
+                <span class="nav-r-arrow nav-item" ng-class="{navRArrow: $ctrl.blockView[$index]}">
+									<span class="nav-text" ng-class="{navTextHover: $ctrl.blockView[$index]}">{{submenu}}</span>
 								</span>
-                <div class="nav-item-divider" ng-show="$index==6 || $index==18"></div>
+                <div class="nav-item-divider" ng-show="$index===6 || $index===17"></div>
               </div>
               <span class="nav-item">
-								<span class="nav-text nav-link">Full Store Directory</span>
+								<span class="nav-text nav-link"
+                      ng-class="{navLinkHover: $ctrl.blockView[$index]}">Full Store Directory</span>
 							</span>
             </div>
           </div>
-          <div class="nav-block3" ng-class="{navitem: $ctrl.blockView}" ng-mouseover="$ctrl.blockView=true" ng-mouseleave="$ctrl.blockView=false">
-            <div class="nav-submenu1" ng-class="{navsubmenu1: $ctrl.blockView}">
-              <img class="nav-promo" ng-class="{navpromo: $ctrl.blockView}" src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/merch/2017_PrimeDay/Leadup/AVD_5384_PrimeDay_TVOD_LEADUP_flyout_us._CB505604078_.png">
+          <!-- ===================================================================================================== -->
+          <div class="nav-block3"
+               ng-repeat="department in $ctrl.getDepartments"
+               ng-class="{navitem: $ctrl.blockView[$index]}"
+               ng-mouseover="$ctrl.blockView[$index]=true"
+               ng-mouseleave="$ctrl.blockView[$index]=false"
+               ng-show="$ctrl.blockView[$index]===true">
+            <div class="nav-submenu1" ng-class="{navsubmenu1: $ctrl.blockView[$index]}">
+              <a class="nav-link" href="{{department.link}}">
+                <img class="nav-promo" ng-class="{navpromo: $ctrl.blockView[$index]}"
+                     ng-hide="$index===14 || $index===16" src="{{department.img}}">
+              </a>
+              <!-- BAG fix with img -->
+              <a class="nav-link" href="{{department.link}}">
+                <img class="nav-promo" ng-class="{navpromo: $ctrl.blockView[$index]}"
+                     ng-show="$index===14" src="{{department.img}}" style="height: 525px;margin-bottom: 24px;">
+              </a>
+              <a class="nav-link" href="{{department.link}}">
+                <img class="nav-promo" ng-class="{navpromo: $ctrl.blockView[$index]}"
+                     ng-show="$index===16" src="{{department.img}}"
+                     style="width: 499px;height: 525px;margin-bottom: 24px;right: 0">
+              </a>
+              <!--/BAG fix with img -->
               <div class="nav-column-first">
-                <span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">Amazon Video</span>
-                <div class="nav-panel">
-
-                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">All Videos</span>
-                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">All TV shows, movies, and more</span>
-                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Included with Prime</span>
-                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Originals, exclusives, and more</span>
-                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Amazon Channels</span>
-                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">HBO, SHOWTIME, STARZ, and more</span>
-                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Rent or Buy</span>
-                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">New releases, latest seasons, and more</span>
-                  <div class="nav-item-divider nav-divider-for-panel" ng-class="{navhide: !$ctrl.blockView}"></div>
-                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Watchlist</span>
-                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Your Video Library</span>
-                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Watch Anywhere</span>
-                  <span class="nav-column-text nav-column-text-padding" ng-class="{navhide: !$ctrl.blockView}">Getting Started</span>
-
+                <div ng-repeat="columnFirst in department.column1">
+                  <span class="nav-column-title" ng-show="columnFirst.showTitle===true">{{columnFirst.title}}</span>
+                  <a class="nav-link" href="{{columnFirst.link}}">
+                    <span class="nav-column-text" ng-class="{navColumnTextPadding: !columnFirst.showSubText}"
+                          ng-show="columnFirst.showText===true">{{columnFirst.text}}</span>
+                    <span class="nav-column-subtext"
+                          ng-show="columnFirst.showSubText===true">{{columnFirst.subText}}</span>
+                  </a>
+                  <div class="nav-item-divider nav-divider-for-panel" ng-show="columnFirst.showDivider===true"></div>
                 </div>
               </div>
               <div class="nav-column-second">
-                <span class="nav-column-title" ng-class="{navhide: !$ctrl.blockView}">More to Explore</span>
-                <div class="nav-panel">
-
-                  <span class="nav-column-text" ng-class="{navhide: !$ctrl.blockView}">Originals</span>
-                  <span class="nav-column-subtext" ng-class="{navhide: !$ctrl.blockView}">Amazon Original Series and Movies</span>
-
+                <div ng-repeat="columnSecond in department.column2">
+                  <span class="nav-column-title" ng-show="columnSecond.showTitle===true">{{columnSecond.title}}</span>
+                  <a class="nav-link" href="{{columnFirst.link}}">
+                    <span class="nav-column-text" ng-class="{navColumnTextPadding: !columnSecond.showSubText}"
+                          ng-show="columnSecond.showText===true">{{columnSecond.text}}</span>
+                    <span class="nav-column-subtext"
+                          ng-show="columnSecond.showSubText===true">{{columnSecond.subText}}</span>
+                  </a>
+                  <div class="nav-item-divider nav-divider-for-panel" ng-show="columnSecond.showDivider===true"></div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- ===================================================================================================== -->
         </div>
       </div>
     </div>
     <!-- /NAVBAR MAIN -->
   </div>
   <!-- /NAVBAR -->
+</div>

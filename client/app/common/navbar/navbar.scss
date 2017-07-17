@@ -235,7 +235,7 @@ NavBar
 				padding: 0;
 				cursor: pointer;
 				opacity: 0;
-				filter: alpha(opacity = 0);
+				filter: alpha(opacity=0);
 				visibility: visible;
 				border: 0;
 				line-height: 35px;
@@ -446,7 +446,7 @@ NavBar
 							.nav-flyout-content .nav-r-arrow {
 								background: url(data:image/gif;base64,R0lGODlhBwAKAMIEAObm5uvr6/Dw8P39/f///////////////yH5BAEKAAcALAAAAAAHAAoAAAMWSDPUGoE5AaIj1M4qMW+ZFDYD1ClnAgA7) no-repeat right 3px;
 							}
-							.nav-r-arrow:hover {
+							.navRArrow {
 								background: url(data:image/gif;base64,R0lGODlhBwAKAMIEAICAgJmZmbOzs/f39////////////////yH5BAEKAAcALAAAAAAHAAoAAAMWSDPUGoE5AaIj1M4qMW+ZFDYD1ClnAgA7) no-repeat right 3px;
 							}
 							.nav-item {
@@ -481,7 +481,17 @@ NavBar
 										color: #e47911;
 									}
 								}
+								.navTextHover {
+									font-weight: 700;
+									color: #e47911;
+								}
 								.nav-link:hover {
+									cursor: pointer;
+									font-weight: 100;
+									color: #e47911;
+									text-decoration: underline;
+								}
+								.navLinkHover {
 									cursor: pointer;
 									font-weight: 100;
 									color: #e47911;
@@ -509,7 +519,7 @@ NavBar
 						float: left;
 						overflow: visible;
 						width: auto;
-						height: 550px;
+						height: 527px;
 						margin-left: 235px;
 						z-index: 300;
 						background: white;
@@ -524,7 +534,7 @@ NavBar
 								bottom: -24px;
 								right: -20px;
 								width: 0;
-								height: 545px;
+								height: 535px;
 								border: none;
 								margin-right: 0;
 								max-width: none;
@@ -546,6 +556,7 @@ NavBar
 								position: relative;
 								clear: both;
 								margin: 0;
+								margin-right: 27px;
 								text-decoration: none;
 								left: 20px;
 								width: 220px;
@@ -573,7 +584,7 @@ NavBar
 								word-wrap: break-word;
 								cursor: pointer;
 							}
-							.nav-column-text-padding {
+							.navColumnTextPadding {
 								padding: 0 0 7px;
 							}
 							.nav-column-subtext {
@@ -592,16 +603,24 @@ NavBar
 								white-space: normal;
 								cursor: pointer;
 							}
-							.nav-panel {
-								width: 220px;
-								margin-right: 27px;
+							.nav-link:hover {
+								text-decoration: none;
 							}
-							.navhide {
-								display: none;
+							.nav-item-divider {
+								position: relative;
+								display: block;
+								line-height: 1px;
+								height: 1px;
+								overflow: hidden;
+								background: #eee;
+								margin: 0 7px 9px 14px;
 							}
 							.nav-divider-for-panel {
 								margin: 0 7px 9px 20px;
 								width: 220px;
+							}
+							.navhide {
+								display: none;
 							}
 							.nav-column-text:hover {
 								color: #e47911;
