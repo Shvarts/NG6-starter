@@ -1,0 +1,122 @@
+<div id="a-page">
+  <div class="a-section a-padding-medium auth-workflow">
+    <div class="a-section a-spacing-none">
+      <div class="a-section a-spacing-medium a-text-center">
+        <a class="a-link-nav-icon" tabindex="-1" href="#"><i class="a-icon a-icon-logo" aria-label="Amazon"><span class="a-icon-alt">Amazon</span></i></a>
+      </div>
+    </div>
+
+    <div class="a-section auth-pagelet-container">
+      <div class="a-section a-spacing-base">
+        <div class="a-section">
+          <form ng-submit="$ctrl.login()" name="$ctrl.frmLogin" class="auth-validate-form auth-real-time-validation a-spacing-none fwcim-form">
+            <div class="a-section">
+              <div class="a-box">
+                <div class="a-box-inner a-padding-extra-large">
+                  <h1 class="a-spacing-small">Sign in</h1>
+                  <div class="a-row a-spacing-base">
+                    <label for="ap_email" class="a-form-label">Email</label>
+                    <input ng-model="$ctrl.email" ng-class="{ 'a-form-error': $ctrl.frmLogin.email.$dirty && $ctrl.frmLogin.email.$invalid }" required type="email" maxlength="128" id="ap_email" name="email" tabindex="1" class="a-input-text a-span12 auth-autofocus auth-required-field">
+                    <div ng-show="$ctrl.frmLogin.email.$dirty && $ctrl.frmLogin.email.$error.required" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
+                      <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
+                        <div class="a-alert-content">
+                          Enter your email
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-show="$ctrl.frmLogin.email.$dirty && $ctrl.frmLogin.email.$error.email" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
+                      <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
+                        <div class="a-alert-content">
+                          Please enter a valid email address
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="a-section a-spacing-large">
+                    <div class="a-row">
+                      <div class="a-column a-span5">
+                        <label for="ap_password" class="a-form-label">Password</label>
+                      </div>
+                      <div class="a-column a-span7 a-text-right a-span-last">
+                        <a id="auth-fpp-link-bottom" class="a-link-normal" href="#">Forgot your password?</a>
+                      </div>
+                    </div>
+                    <input ng-model="$ctrl.password" ng-class="{ 'a-form-error': $ctrl.frmLogin.password.$dirty && $ctrl.frmLogin.password.$invalid }" required minlength="6" type="password" id="ap_password" name="password" tabindex="2" class="a-input-text a-span12 auth-required-field">
+                    <div ng-show="$ctrl.frmLogin.password.$dirty && $ctrl.frmLogin.password.$error.required" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
+                      <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
+                        <div class="a-alert-content">
+                          Enter your password
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-show="$ctrl.frmLogin.password.$dirty && $ctrl.frmLogin.password.$error.minlength" class="a-box a-alert-inline a-alert-inline-error a-spacing-none a-spacing-top-mini">
+                      <div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i>
+                        <div class="a-alert-content">
+                          Passwords must be at least 6 characters
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="a-section a-spacing-extra-large">
+                    <span ng-class="{ 'a-button-disabled': $ctrl.frmLogin.$invalid }" class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
+                      <span class="a-button-inner">
+                        <input ng-disabled="$ctrl.frmLogin.$invalid" id="signInSubmit" tabindex="5" class="a-button-input" type="submit" aria-labelledby="a-autoid-0-announce">
+                        <span class="a-button-text" aria-hidden="true" id="a-autoid-0-announce">Sign in</span>
+                      </span>
+                    </span>
+                    <div class="a-row a-spacing-top-medium">
+                      <div class="a-section a-text-left">
+                        <label for="auth-remember-me" class="a-form-label">
+                          <div data-a-input-name="rememberMe" class="a-checkbox">
+                            <label>
+                              <input type="checkbox" name="rememberMe" id="auth-remember-me" value="true" tabindex="4">
+                              <i class="a-icon a-icon-checkbox"></i>
+                              <span class="a-label a-checkbox-label">
+                                Keep me signed in.
+                                <span class="a-declarative">
+                                  <a id="remember_me_learn_more_link" href="#" class="a-popover-trigger a-declarative">Details<i class="a-icon a-icon-popover"></i></a>
+                                </span>
+                              </span>
+                            </label>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="a-divider a-divider-break">
+                    <h5>New to Amazon?</h5>
+                  </div>
+                  <span id="auth-create-account-link" class="a-button a-button-span12">
+                    <span class="a-button-inner">
+                      <a id="createAccountSubmit" tabindex="6" href="#" class="a-button-text" role="button">Create your Amazon account</a>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="right-2"></div>
+
+    <div class="a-section a-spacing-top-extra-large">
+      <div class="a-divider a-divider-section">
+        <div class="a-divider-inner"></div>
+      </div>
+      <div class="a-section a-spacing-small a-text-center a-size-mini">
+        <span class="auth-footer-seperator"></span>
+        <a class="a-link-normal" target="_blank" rel="noopener" href="#">Conditions of Use</a>
+        <span class="auth-footer-seperator"></span>
+        <a class="a-link-normal" target="_blank" rel="noopener" href="#">Privacy Notice</a>
+        <span class="auth-footer-seperator"></span>
+        <a class="a-link-normal" target="_blank" rel="noopener" href="#">Help</a>
+        <span class="auth-footer-seperator"></span>
+      </div>
+      <div class="a-section a-spacing-none a-text-center">
+        <span class="a-size-mini a-color-secondary">© 1996-2017, Amazon.com, Inc. or its affiliates</span>
+      </div>
+    </div>
+  </div>
+</div>
