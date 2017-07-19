@@ -71,7 +71,7 @@ export const Departments = [
   }, {
     "title": "Outdoors",
     "link": "#",
-    "text": ["Outdoor Clothing", "Camping & Hiking", "Climbing", "Climbing", "Scooters, Skateboards & Skates", "Water Sports","Winter Sports","Accessories","All Outdoor Recreation"]
+    "text": ["Outdoor Clothing", "Camping & Hiking", "Climbing", "Scooters, Skateboards & Skates", "Water Sports","Winter Sports","Accessories","All Outdoor Recreation"]
   }, {
     "title": "Automotive & Industrial",
     "link": "#",
