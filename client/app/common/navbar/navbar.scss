@@ -563,8 +563,8 @@ NavBar FULL
 					position: relative;
 					height: 35px;
 					background: $nav-submit-text-color;
-					border-top: 1px solid $nav-search-border-color;
-					border-bottom: 1px solid $nav-search-border-color;
+					border-top: 1px solid #fff;
+					border-bottom: 1px solid #fff;
 					.nav-input-mobile{
 						display: none;
 					}
