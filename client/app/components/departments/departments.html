@@ -10,23 +10,18 @@
       <i class="a-icon a-icon-touch"></i>
     </a>
 
-    <div class="a-section-expander">
-      <a href="#" aria-haspopup="true" class="a-touch-link" ng-click="$ctrl.expandView=!$ctrl.expandView" ng-class="{aTouchedLink: $ctrl.expandView}">Amazon Music
-        <i class="a-icon a-icon-touch" ng-class="{aTouchedIcon: $ctrl.expandView}"></i>
+    <div class="a-section-expander" ng-repeat="department in $ctrl.getDepartments">
+      <a href="{{department.link}}" aria-haspopup="true" class="a-touch-link"
+         ng-click="$ctrl.expandView[$index]=!$ctrl.expandView[$index]"
+         ng-class="{aTouchedLink: $ctrl.expandView[$index]}">
+        {{department.title}}<i class="a-icon a-icon-touch" ng-class="{aTouchedIcon: $ctrl.expandView[$index]}"></i>
       </a>
-      <div class="a-expander-content" ng-class="{expanderShow: $ctrl.expandView}">
-        <a href="#" class="a-touch-sublink">Test</a>
-        <hr class="a-divider">
-        <a href="#" class="a-touch-sublink">Test</a>
-        <hr class="a-divider">
-        <a href="#" class="a-touch-sublink">Test</a>
+      <div class="a-expander-content" ng-class="{expanderShow: $ctrl.expandView[$index]}">
+        <div ng-repeat="depText in department.text">
+          <a href="#" class="a-touch-sublink">{{depText}}</a>
+          <hr class="a-divider" ng-hide="$last===true">
+        </div>
       </div>
     </div>
-    <div class="a-section-expander">
-      <a href="#" aria-haspopup="true" class="a-touch-link">Amazon Video
-        <i class="a-icon a-icon-touch"></i>
-      </a>
-    </div>
-
   </div>
 </section>

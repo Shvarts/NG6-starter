@@ -1,6 +1,9 @@
+import departments from "./departments.factory";
+
 class DepartmentsController {
   constructor() {
-    this.expandView = false;
+    this.getDepartments = departments.getDepartments();
+    this.expandView = [];
   }
 }
 
