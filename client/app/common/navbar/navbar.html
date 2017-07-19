@@ -2,48 +2,62 @@
 <div class="nav nav-color">
   <!-- NAVBAR HEAD -->
   <!-- LEFT -->
-  <div class="nav-left">
-    <!-- LOGO -->
-    <div class="nav-logo">
-      <a href="#" class="nav-logo-link">
-        <span class="nav-logo-img nav-sprite">Amazon</span>
-      </a>
-      <!-- Try Prime -->
-      <div class="nav-logo-tagline-position">
-        <div class="nav-holder">
-          <a href="#" class="nav-logo-tagline nav-sprite">Try Prime</a>
-          <div class="nav-block">
-            <div class="nav-arrow">
-              <div class="nav-arrow-inner"></div>
-            </div>
-            <div class="nav-flyout-content">
-              <div class="nav-flyout-content-title"> Getfast, freeshipping with Amazon Prime</div>
-              <div class="nav-flyout-content-text">Prime members enjoy FREE Two - Day Shipping and exclusive access to
-                music, movies, TV shows, original audio series, and Kindle books.
+  <div class="nav-mobile-head">
+    <div class="nav-left">
+      <!-- LOGO -->
+      <div class="nav-logo">
+        <a href="/" class="nav-logo-link" ng-click="$ctrl.viewMain=false">
+          <span class="nav-logo-img nav-sprite">Amazon</span>
+        </a>
+        <!-- Try Prime -->
+        <div class="nav-logo-tagline-position">
+          <div class="nav-holder">
+            <a href="#" class="nav-logo-tagline nav-sprite">Try Prime</a>
+            <div class="nav-block">
+              <div class="nav-arrow">
+                <div class="nav-arrow-inner"></div>
               </div>
-              <div class="nav-flyout-content-text"> >
-                <a href="#" class="nav-flyout-content-link">Get started</a>
+              <div class="nav-flyout-content">
+                <div class="nav-flyout-content-title"> Getfast, freeshipping with Amazon Prime</div>
+                <div class="nav-flyout-content-text">Prime members enjoy FREE Two - Day Shipping and exclusive access to
+                  music, movies, TV shows, original audio series, and Kindle books.
+                </div>
+                <div class="nav-flyout-content-text"> >
+                  <a href="#" class="nav-flyout-content-link">Get started</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- /Try Prime -->
       </div>
-      <!-- /Try Prime -->
+      <!-- /LOGO -->
     </div>
-    <!-- /LOGO -->
-  </div>
-  <!-- /LEFT -->
-  <!-- RIGHT -->
-  <div class="nav-right">
-    <!-- BLOCK -->
-    <div class="nav-right-block">
-      <a href="#">
-        <div class="nav-right-img"></div><!-- img -->
+    <!-- /LEFT -->
+    <!-- RIGHT -->
+    <div class="nav-right">
+      <!-- MOBILE -->
+      <a class="nav-sign-in" href="#">Sign In</a>
+      <a class="nav-avatar" href="#">
+        <i class="nav-icon nav-sprite">your account</i>
       </a>
+      <a class="nav-cart" href="#">
+        <div class="nav-cart-empty">
+          <i class="nav-icon nav-sprite"></i>
+          <span class="nav-cart-count"></span>
+        </div>
+      </a>
+      <!-- /MOBILE -->
+      <!-- BLOCK -->
+      <div class="nav-right-block">
+        <a href="#">
+          <div class="nav-right-img"></div><!-- img -->
+        </a>
+      </div>
+      <!-- /BLOCK -->
     </div>
-    <!-- /BLOCK -->
+    <!-- /RIGHT -->
   </div>
-  <!-- /RIGHT -->
   <!-- FILL -->
   <div class="nav-fill">
     <!-- SEARCH BLOCK -->
@@ -77,6 +91,7 @@
             <span class="nav-search-submit-text nav-sprite">Go</span>
             <input type="submit" class="nav-input" ng-click="$ctrl.search($ctrl.selectedCategory)"
                    ng-focus="focused2 = true" ng-blur="focused2 = false" value="GO"/>
+            <i class="nav-icon nav-sprite"></i>
           </div>
           <!-- /SUBMIT search -->
         </div>
@@ -85,6 +100,8 @@
         <div class="nav-fill">
           <!-- TXT -->
           <div class="nav-search-field">
+            <input type="text" class="nav-input-mobile" autocomplete="off" placeholder="Search"
+                   ng-model="$ctrl.getText">
             <input type="text" class="nav-input" autocomplete="off" placeholder=""
                    ng-class="{navfocus: focused3, navfocus2: focused4, navfocus3: focused4}"
                    ng-focus="focused3 = true;focused4 = true"
@@ -99,6 +116,8 @@
     </div>
     <!-- /SEARCH BLOCK -->
     <!-- TABLE WITH ITEMS -->
+
+    <!--
     <div class="container">
       <br><br><br><br><br><br>
       <table class="table table-bordered table-striped">
@@ -125,7 +144,13 @@
   <!-- /FILL -->
   <!-- /NAVBAR HEAD -->
   <!-- NAVBAR MAIN -->
-  <div class="nav-main">
+  <div class="nav-main" ng-class="{navMainHide: $ctrl.viewMain}">
+    <!-- MOBILE -->
+    <a href="/departments" ng-click="$ctrl.viewMain=true" class="nav-a" style="color:#FFFFFF;">Departments</a>
+    <a href="#" class="nav-a" style="color:#FF8F00;">Prime</a>
+    <a href="#" class="nav-a" style="color:#36C2B4;">Video</a>
+    <a href="#" class="nav-a" style="color:#82D8E3;">Music</a>
+    <!-- /MOBILE -->
     <div class="nav-left">
       <div class="nav-shop">
         <div class="nav-holder">
@@ -205,7 +230,7 @@
         </div>
       </div>
     </div>
-    <!-- /NAVBAR MAIN -->
   </div>
+  <!-- /NAVBAR MAIN -->
   <!-- /NAVBAR -->
 </div>

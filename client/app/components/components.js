@@ -1,12 +1,12 @@
 import angular from 'angular';
 import Home from './home/home';
 import About from './about/about';
-import Search from './search/search'
+import Departments from './departments/departments';
 
 let componentModule = angular.module('app.components', [
   Home,
   About,
-  Search
+  Departments
 ])
 
 .name;

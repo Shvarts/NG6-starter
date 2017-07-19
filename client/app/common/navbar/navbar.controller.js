@@ -10,6 +10,7 @@ class NavbarController {
     this.txtSearch = "";
     this.blockView = [];
     this.searchedItems = [];
+    this.viewMain=false;
   }
 
   search(selectedCategory) {
